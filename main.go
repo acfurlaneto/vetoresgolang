@@ -3,9 +3,14 @@ package main
 import "fmt"
 
 func main() {
-    numeros := []int{10, 20, 30, 40, 50}
-    numeros = append(numeros, 60, 70, 80)
-    fmt.Println("Slice de números:", numeros)
-    fmt.Println("Tamanho do slice:", len(numeros))
-    fmt.Println("Capacidade do slice:", cap(numeros))
+    nomes := []string{"Ana", "Paola", "Rubi", "Teresa", "Clark"}
+    fmt.Println (nomes)
+    rangeOne := nomes[:2]
+    fmt.Println(rangeOne) 
+    rangeTwo := nomes[3:]
+    fmt.Println(rangeTwo) 
+    rangeThree := nomes[2:3] 
+    fmt.Println(rangeThree) 
+ 
 }
+
