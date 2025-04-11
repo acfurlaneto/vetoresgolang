@@ -1,20 +1,36 @@
-package main 
+package main
 
-import ( 
+import "fmt"
 
-"fmt" 
-) 
+func main() {
+	var saldo, valor float64
+	var acao string
 
-func main() { 
-var numeros [5]int 
-soma := 0 
-fmt.Println("Digite 5 números inteiros:") 
-for i := 0; i < len(numeros); i++ { 
-fmt.Printf("Número %d: ", i+1)
-fmt.Scan(&numeros[i]) 
-soma += numeros[i]
-} 
-fmt.Printf("\nA soma dos números digitados é: %d!\n", soma) 
-fmt.Println("Arrasou! Código finalizado com sucesso ✨") 
-} 
+	fmt.Print("Saldo inicial: R$ ")
+	fmt.Scan(&saldo)
 
+	for {
+fmt.Print("\nDigite 'sacar', 'depositar' ou 'sair': ")
+fmt.Scan(&acao)
+
+if acao == "sair" {
+break
+}
+
+fmt.Print("Valor: R$ ")
+fmt.Scan(&valor)
+
+if acao == "depositar" {
+saldo += valor
+} else if acao == "sacar" {
+if valor <= saldo {
+saldo -= valor
+} else {
+fmt.Println("Saldo insuficiente.")
+}
+} else {
+fmt.Println("Ação inválida.")
+}
+fmt.Printf("Saldo atual: R$ %.2f\n", saldo)
+	}
+}
