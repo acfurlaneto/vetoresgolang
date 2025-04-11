@@ -3,34 +3,16 @@ package main
 import "fmt"
 
 func main() {
-	var saldo, valor float64
-	var acao string
+	var idade int
 
-	fmt.Print("Saldo inicial: R$ ")
-	fmt.Scan(&saldo)
+	fmt.Print("Informe sua idade: ")
+	fmt.Scan(&idade)
 
-	for {
-fmt.Print("\nDigite 'sacar', 'depositar' ou 'sair': ")
-fmt.Scan(&acao)
-
-if acao == "sair" {
-break
-}
-
-fmt.Print("Valor: R$ ")
-fmt.Scan(&valor)
-
-if acao == "depositar" {
-saldo += valor
-} else if acao == "sacar" {
-if valor <= saldo {
-saldo -= valor
+if idade < 18 {
+fmt.Println("Você ainda é menor de idade 🎀 Aproveita a fase!")
+} else if idade <= 60 {
+fmt.Println("Você é um adulto! 💼 Bora pagar boletos!.")
 } else {
-fmt.Println("Saldo insuficiente.")
-}
-} else {
-fmt.Println("Ação inválida.")
-}
-fmt.Printf("Saldo atual: R$ %.2f\n", saldo)
+fmt.Println("Você é Idoso!👑👵🏼.")
 	}
 }
